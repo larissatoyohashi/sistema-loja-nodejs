@@ -15,6 +15,7 @@
         <td><b>Nome do Produto</b></td>
         <td><b>Preço</b></td>
         <td><b>Categoria</b></td>
+        <td><b>Capa</b></td>
     </tr>
 
     <% produtos.forEach(produto => { %> 
@@ -22,6 +23,7 @@
         <td><%=produto.nome %></td>
         <td><%=produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
         <td><%=produto.categoria %></td>
+        <td><img src=<%=produto.imagem %> height="100px"></td>
     </tr>
     <%})%>
 
