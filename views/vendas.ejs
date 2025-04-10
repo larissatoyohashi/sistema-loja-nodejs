@@ -1,0 +1,30 @@
+<%- include ('partials/navbar.ejs')%>
+<%- include ('partials/header.ejs')%>
+       
+<br>
+<br>
+<table width="500px" height="50px" class="titulo">
+        <td><b>Pedidos</b></td>
+</table>
+
+<br> 
+
+<table width="500px" height="250px">
+    <tr>
+        <td><b>Código</b></td>
+        <td><b>Valor</b></td>
+    </tr>
+
+    <% vendas.forEach(vendas => { %> 
+        <tr>
+        <td><%=vendas.codigo %></td>
+        <td><%=vendas.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></td>
+    </tr>
+    <%})%>
+    
+</table>
+
+<br>
+<br>
+
+<%- include ('partials/footer.ejs')%>
