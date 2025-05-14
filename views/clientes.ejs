@@ -14,6 +14,7 @@
         <td><b>Nome</b></td>
         <td><b>CPF</b></td>
         <td><b>Endereço</b></td>
+        <td><b>Ações</b></td>
     </tr>
 
     <% clientes.forEach(clientes => { %> 
@@ -21,10 +22,40 @@
         <td><%=clientes.nome %></td>
         <td><%=clientes.cpf %></td>
         <td><%=clientes.endereco %></td>
+        <td><a href="/clientes/delete/<%= clientes.id %>"><button class="btn btn-danger">Excluir</button></a>
+        <a href="/clientes/edit/<%= clientes.id %>"><button class="btn btn-warning">Editar</button></a></td>
         </tr>
     <%})%>
     
 </table>
+<br><br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1> Cadastrar Cliente </h1>
+        </div>
+        <div class="card-body">
+            <form action="/clientes/new" method="POST">
+                <label> Nome do cliente:</label>
+                <input type="text" name="nome" placeholder="Insira o nome do cliente" class="form-control" required>
+
+                <label> CPF do cliente:</label>
+                <input type="text" name="cpf" placeholder="Insira o cpf do cliente" class="form-control" required>
+
+                <label> Endereço do cliente:</label>
+                <input type="text" name="endereco" placeholder="Insira o endereço do cliente" class="form-control" required>
+                
+                <br>
+
+                <button type="submit" class="btn btn-success"> Cadastrar </button>
+
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
 
 <br>
 <br>
